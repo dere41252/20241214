@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網頁工具集</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin: 40px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-size: clamp(24px, 5vw, 36px);
+            padding: 0 20px;
+        }
+
+        .tools-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .tool-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .tool-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .tool-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* 返回按鈕樣式 */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .tool-description {
+                font-size: 12px;
+            }
+            
+            .tool-icon {
+                font-size: 36px;
+            }
+            
+            .tool-title {
+                font-size: 18px;
+            }
+
+            .tools-container {
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .tool-card {
+                padding: 15px;
+            }
+
+            footer {
+                padding: 15px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tools-container {
+                grid-template-columns: 1fr;
+            }
+
+            .tool-card {
+                padding: 10px;
+            }
+
+            .tool-icon {
+                font-size: 32px;
+            }
+
+            .back-button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+                color: #fff;
+            }
+
+            .tool-card {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                color: #fff;
+            }
+
+            .tool-description {
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            footer {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>網頁工具集</h1>
+    
+    <div class="tools-container">
+        <a href="Calculator.html" class="tool-card">
+            <div class="tool-icon">🧮</div>
+            <div class="tool-title">計算機</div>
+            <div class="tool-description">
+                具備歷史記錄功能的網頁計算機，
+                支援鍵盤操作，介面簡潔易用。
+            </div>
+        </a>
+
+        <a href="Painter.html" class="tool-card">
+            <div class="tool-icon">🎨</div>
+            <div class="tool-title">網頁小畫家</div>
+            <div class="tool-description">
+                簡易的繪圖工具，支援各種顏色和筆刷大小，
+                可以儲存作品。
+            </div>
+        </a>
+
+        <a href="PhotoFrame.html" class="tool-card">
+            <div class="tool-icon">🖼️</div>
+            <div class="tool-title">電子相框</div>
+            <div class="tool-description">
+                自動播放的電子相框，可以上傳自己的照片，
+                支援觸控操作。
+            </div>
+        </a>
+
+        <a href="QR_Code.html" class="tool-card">
+            <div class="tool-icon">📱</div>
+            <div class="tool-title">QR Code 生成器</div>
+            <div class="tool-description">
+                快速生成 QR Code，支援自定義大小，
+                可即時預覽。
+            </div>
+        </a>
+    </div>
+
+    <footer>
+        <p>© 2024 網頁工具集 | 使用HTML、CSS和JavaScript開發</p>
+    </footer>
+</body>
+</html> 
